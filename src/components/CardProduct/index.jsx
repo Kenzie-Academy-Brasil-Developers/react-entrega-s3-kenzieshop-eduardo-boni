@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import addItensThunk from "../../store/modules/Cart/thunks";
+import { Card } from "./style";
 
-const CardProduct = ({ id, name, img, preice, item }) => {
+const CardProduct = ({ id, name, img, category, price, item }) => {
     const dispatch = useDispatch();
 
     const addCart = () => {
@@ -9,12 +10,13 @@ const CardProduct = ({ id, name, img, preice, item }) => {
     }
 
     return (
-        <div id={id}>
-            <h5>{name}</h5>
-            <img src={img} alt="camisa"/>
-            <h4>R$ {preice.toFixed(2)}</h4>
+        <Card id={id}>
+            <h3>{name}</h3>
+            <img src={img} alt="camiseta"/>
+            <h4 className="category">{category}</h4>
+            <h4>R$ {price.toFixed(2).replace('.', ',')}</h4>
             <button onClick={addCart}>Comprar</button>
-        </div>
+        </Card>
     )
 }
 

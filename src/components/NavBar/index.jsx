@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
+import { Header } from "./style";
+import { CgShoppingCart } from "react-icons/cg";
 
 const NavBar = ({ num }) => {
     return (
-        <header>
-            <h3>
-                <Link>Kenzie Shop</Link>
-            </h3>
-            <Link>
+        <Header>
+            <h2>
+                <Link to={"/"}>Kenzie Shop</Link>
+            </h2>
+            <Link to={"/cart"}>
                 {num > 0 && (
-                <div>
+                    <div>
                     <p>{num}</p>
                 </div> )}
+                <CgShoppingCart />
             </Link>
-        </header>
+        </Header>
     )
 }
 

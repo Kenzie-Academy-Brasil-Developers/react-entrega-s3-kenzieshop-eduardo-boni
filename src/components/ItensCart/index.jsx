@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { removerItens } from "../../store/modules/Cart/actions";
-
+import { Container } from "./style";
 
 const ItensCart = ({ id, img, name, price }) => {
     const dispach = useDispatch(id);
@@ -10,13 +10,14 @@ const ItensCart = ({ id, img, name, price }) => {
     }
 
     return (
-        <div>
-            <img src={img} alt={name}/>
+        <Container>
+            <img src={img} alt="camiseta"/>
             <div>
-                <p>R$ {price.toFixed(2)}</p>
+                <p>{name}</p>
+                <p>R$ {price.toFixed(2).replace('.', ',')}</p>
                 <button onClick={() => remover(id)}>Remover</button>
             </div>
-        </div>
+        </Container>
     )
 }
 
