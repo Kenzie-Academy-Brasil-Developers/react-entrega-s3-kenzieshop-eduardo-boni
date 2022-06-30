@@ -1,14 +1,10 @@
-import { ADD__PRODUCT, REMOVE__PRODUCT, CLEAR__CART } from "./actionTypes";
+import { ADD_ITENS, REMOVE_ITENS } from "./actionTypes";
 
-export const AddProduct = (productsCart) => ({
-  type: ADD__PRODUCT,
-  productsCart,
+export const addItens = (item) => ({
+  type: ADD_ITENS,
+  item,
 });
-export const RemoveProduct = (productsCart) => ({
-  type: REMOVE__PRODUCT,
-  productsCart,
-});
-export const ClearCart = (cart) => ({
-  type: CLEAR__CART,
-  cart,
+export const removerItens = (item) => ({
+  type: REMOVE_ITENS,
+  item,
 });

@@ -1,19 +1,16 @@
-import { ADD__PRODUCT, REMOVE__PRODUCT, CLEAR__CART } from "./actionTypes";
+import { ADD_ITENS, REMOVE_ITENS} from "./actionTypes";
 
-const inicialState = {
-  productsCart: [],
-  status: false,
-};
-const cartReducer = (state = inicialState, action) => {
+const itensReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD__PRODUCT:
-      return { ...action.productsCart, status: true };
-    case REMOVE__PRODUCT:
-      return { ...action.productsCart, status: true };
-    case CLEAR__CART:
-      return action.cart;
+    case ADD_ITENS:
+      return [...state, action.item];
+
+    case REMOVE_ITENS:
+      return (state = state.filter((item) => item.id !== action.item));
+
     default:
       return state;
   }
 };
-export default cartReducer;
+
+export default itensReducer;

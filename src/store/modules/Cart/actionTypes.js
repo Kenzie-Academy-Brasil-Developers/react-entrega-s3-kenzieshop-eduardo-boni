@@ -1,5 +1,4 @@
-export const ADD__PRODUCT = "@cart/ADD";
+export const ADD_ITENS = "@items/ADD";
 
-export const REMOVE__PRODUCT = "@remove/REMOVE";
+export const REMOVE_ITENS = "@items/REMOVE";
 
-export const CLEAR__CART = "@clear/cart";
